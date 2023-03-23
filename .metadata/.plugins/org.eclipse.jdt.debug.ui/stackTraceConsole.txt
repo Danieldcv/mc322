@@ -1,0 +1,45 @@
+private String nome ;
+3 private String telefone ;
+4 private String email ;
+5 private String endereco ;
+6
+7 // Construtor
+8 public Seguradora ( String nome , String telefone , String email , String endereco ) {
+9 this . nome = nome ;
+10 this . telefone = telefone ;
+11 this . email = email ;
+12 this . endereco = endereco ;
+13 }
+14
+15 // Getters e setters
+16 public String getNome () {
+17 return nome ;
+18 }
+19
+20 public void setNome ( String nome ) {
+21 this . nome = nome ;
+22 }
+23
+24 public String getTelefone () {
+25 return telefone ;
+26 }
+27
+28 public void setTelefone ( String telefone ) {
+29 this . telefone = telefone ;
+30 }
+31
+32 public String getEmail () {
+33 return email ;
+34 }
+35
+36 public void setEmail ( String email ) {
+37 this . email = email ;
+38 }
+39
+40 public String getEndereco () {
+41 return endereco ;
+42 }
+43
+44 public void setEndereco ( String endereco ) {
+45 this . endereco = endereco ;
+46 }
