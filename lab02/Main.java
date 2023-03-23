@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
 	public static void main(String args[]) {
 		// Testando os métodos da classe Cliente
-		Cliente cliente = new Cliente("Daniel", "464.177.428-57", "15/09/2004", 18, "Rua Pitágoras 123");
+		Cliente cliente = new Cliente("Daniel", "464.236.448-02", "15/09/2004", 18, "Rua Pitágoras 123");
 		System.out.println(cliente);
 	 	System.out.println(cliente.validarCPF(cliente.getCPF()));
 		System.out.println();
