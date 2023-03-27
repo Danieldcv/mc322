@@ -6,6 +6,8 @@ public class Main {
 		Cliente cliente = new Cliente("Daniel", "464.236.448-02", "15/09/2004", 18, "Rua Pitágoras 123");
 		System.out.println(cliente);
 	 	System.out.println(cliente.validarCPF(cliente.getCPF()));
+		if (cliente.validarCPF(cliente.getCPF()) == false)
+			System.out.println("CPF inválido.");
 		System.out.println();
 
 		// Testando os métodos da classe Seguradora
