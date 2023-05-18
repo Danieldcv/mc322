@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class Sinistro {
     // Atributos
-    private int id;
+    private final int id;
     private Date data;
     private String endereco;
     private Seguradora seguradora;
@@ -13,22 +13,17 @@ public class Sinistro {
     private static SimpleDateFormat datasFormatadas = new SimpleDateFormat("dd/MM/yyyy");
 
     // Método construtor
-    public Sinistro(int id, Date data, String endereco, Seguradora seguradora, Veiculo veiculo, Cliente cliente) {
-       this.id = id;
+    public Sinistro(Date data, String endereco, Seguradora seguradora) {
+       this.id = geraId();
        this.data = data;
        this.endereco = endereco; 
        this.seguradora = seguradora;
-       this.veiculo = veiculo;
-       this.cliente = cliente;
-    }
-
-    public Sinistro() {
     }
 
     // Setters e getters
-    public void setId(int id) {
+    public int geraId(){
         Random aleatorio = new Random();
-        this.id = aleatorio.nextInt(100000000);
+        return aleatorio.nextInt(100000000);
     } 
 
     public void setData(Date data) { 

@@ -92,11 +92,7 @@ public class Seguradora {
 	}
 
 	public boolean gerarSinistro(Date data, String endereco, String placa, String nomeCliente) {
-		Sinistro sinistro = new Sinistro();
-		sinistro.setId(1);
-		sinistro.setData(data);
-		sinistro.setEndereco(endereco);
-		sinistro.setSeguradora(this); 
+		Sinistro sinistro = new Sinistro(data, endereco, this);
 		for (Cliente cliente : listaClientes) {
 			if (cliente.getNome().equals(nomeCliente)) {
 				sinistro.setCliente(cliente);
