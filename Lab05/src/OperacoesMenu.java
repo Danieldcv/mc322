@@ -208,10 +208,17 @@ public class OperacoesMenu {
     }
 
     public static void cadastrarFrota(ArrayList<Seguradora> listaSeguradoras, Scanner entrada) {
+        System.out.println("Digite o CNPJ do cliente a que deseja adicionar a frota em questão: ");
+        String cnpjCliente = entrada.nextLine();
+        cnpjCliente = cnpjCliente.replaceAll("[^0-9]+", "");
+
+        System.out.println("Digite o CNPJ da seguradora em que o cliente digitado acima está cadastrado: ");
+        String cnpjSeguradora = entrada.nextLine();
+        cnpjSeguradora = cnpjSeguradora.replaceAll("[^0-9]+", "");
+
         System.out.println("Digite um nome para identificar esta frota: ");
         String nome = entrada.nextLine();
         Frota frota = new Frota(nome);
-        System.out.println("O code identificador desta frota é: " + frota.getCode() + ". Anote-o para futuras consultas!");
         
         System.out.println("Digite o número de veículos desta frota: ");
         Integer nVeiculos = Integer.parseInt(entrada.nextLine());
@@ -230,6 +237,26 @@ public class OperacoesMenu {
             else
                 System.out.println("Erro: veículo já adicionado anteriomente.");
             System.out.println("*");
+        }
+
+        for (Seguradora seg : listaSeguradoras) {
+            if (seg.getCNPJ().equals(cnpjSeguradora)) {
+                for (Cliente cliente : seg.getListaClientes()) {
+                    if (cliente.getClass() == ClientePJ.class) {
+                        if (((ClientePJ)cliente).getCNPJ().equals(cnpjCliente)) {
+                            for (Frota f : ((ClientePJ)cliente).getListaFrota()) {
+                                if (f.getCode().equals(frota.getCode())) {
+                                    System.out.println("Erro ao cadastrar frota. Nome identifcador já existente. Cadastre-a usando outro nome.");
+                                }
+                            }
+                            if (((ClientePJ)cliente).cadastrarFrota(frota)) {
+                                System.out.println("Frota cadastrada com sucesso!");
+                                System.out.println("O code identificador desta frota é: " + frota.getCode() + ". Anote-o para futuras consultas!");
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 

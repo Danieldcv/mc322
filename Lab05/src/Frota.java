@@ -16,6 +16,10 @@ public class Frota {
         return Integer.toString(aux);
     }
 
+    public void setCode(String code) {
+        this.code = code;
+    }
+
     public String getCode() {
         return code;
     }

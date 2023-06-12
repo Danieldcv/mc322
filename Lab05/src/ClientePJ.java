@@ -44,8 +44,11 @@ public class ClientePJ extends Cliente {
     }
 
     public boolean cadastrarFrota(Frota frota) {
-        if (listaFrota.contains(frota))
-            return false;
+        for (Frota f : listaFrota) {
+            if (f.getCode().equals(frota.getCode())) {
+                return false;
+            }
+        }
         listaFrota.add(frota);
         return true;
     }
