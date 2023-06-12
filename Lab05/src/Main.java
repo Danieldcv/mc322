@@ -282,7 +282,7 @@ public class Main {
         if (!Validacao.validarCNPJ("69479158000192"))
             System.out.println("CNPJ inválido.");
         ClientePJ clientepj = new ClientePJ("Daniboy Empreendimentos", "Rua Leoncio de Magalhaes 479", 
-                    "11940768221","daniboy.company@gmailcom", "69.479.158/0001-92", 
+                    "11940768221","daniboy.company@gmailcom", "69479158000192", 
                                 dataFundacao, 100);
         if (clientepj.cadastrarFrota(frota1))
             System.out.println("Frota cadastrada com sucesso!");
