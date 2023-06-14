@@ -39,7 +39,7 @@ public class Peao extends Peca{
                     // Promoção de um peão das brancas
                 }
                 else if(this.getCorDono().equals("preta") && ny == 1) {
-                    // Promoção de um peão das brancas
+                    // Promoção de um peão das pretas
                 }
                 else {
                     return this._make_move(destino);
