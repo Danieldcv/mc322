@@ -12,28 +12,28 @@ public class Bispo extends Peca{
         if(nx < 0 || nx >= 8 || ny < 0 || ny >= 8) // Posição do grid inválida
             return false;
         
-        if(nx > getPosX(this.getPosicao()) && ny > getPosY(this.getPosicao())) { // Movimento para frente e para a direita
+        if(nx > getPosX(this.getPosicao()) && ny > getPosY(this.getPosicao())) { // Movimento na diagonal superior direita
             for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) + i, getPosY(this.getPosicao()) + i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }
             }
         }
-        else if(nx > getPosX(this.getPosicao()) && ny < getPosY(this.getPosicao())) { // Movimento para trás e para direita
+        else if(nx > getPosX(this.getPosicao()) && ny < getPosY(this.getPosicao())) { // Movimento na diagonal inferior direita
             for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) + i, getPosY(this.getPosicao()) - i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }
             }
         }
-        else if(nx < getPosX(this.getPosicao()) && ny > getPosY(this.getPosicao())) { // Movimento para frente e para esquerda
+        else if(nx < getPosX(this.getPosicao()) && ny > getPosY(this.getPosicao())) { // Movimento na diagonal superior esquerda
             for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) - i, getPosY(this.getPosicao()) + i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }
             }
         }
-        else if(nx < getPosX(this.getPosicao()) && ny < getPosY(this.getPosicao())) { // Movimento para trás e para esquerda
+        else if(nx < getPosX(this.getPosicao()) && ny < getPosY(this.getPosicao())) { // Movimento na diagonal inferior esquerda
             for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) - i, getPosY(this.getPosicao()) - i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
