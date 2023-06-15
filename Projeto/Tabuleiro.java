@@ -18,6 +18,8 @@ public class Tabuleiro {
             brancas.add(new Peao("branca", this, Posicao.values()[i].toString() + "2"));
         brancas.add(new Torre("branca", this, "A1"));
         brancas.add(new Torre("branca", this, "H1")); // Torres
+        brancas.add(new Bispo("branca", this, "C1"));
+        brancas.add(new Bispo("branca", this, "F1")); // Bispos
         
         // Inicializar as peças pretas
         pretas.add(new Rei("preta", this, "E8")); // Rei
@@ -25,6 +27,8 @@ public class Tabuleiro {
             pretas.add(new Peao("preta", this, Posicao.values()[i].toString() + "7"));
         pretas.add(new Torre("preta", this, "A8"));
         pretas.add(new Torre("preta", this, "H8")); // Torres
+        pretas.add(new Bispo("preta", this, "C8"));
+        pretas.add(new Bispo("preta", this, "F8")); // Bispos
 
         // Colocar as peças brancas e pretas no tabuleiro
         try{
