@@ -13,28 +13,28 @@ public class Bispo extends Peca{
             return false;
         
         if(nx > getPosX(this.getPosicao()) && ny > getPosY(this.getPosicao())) { // Movimento para frente e para a direita
-            for(int i = 1; i <= deltaX; i++) {
+            for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) + i, getPosY(this.getPosicao()) + i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }
             }
         }
         else if(nx > getPosX(this.getPosicao()) && ny < getPosY(this.getPosicao())) { // Movimento para trás e para direita
-            for(int i = 1; i <= deltaX; i++) {
+            for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) + i, getPosY(this.getPosicao()) - i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }
             }
         }
         else if(nx < getPosX(this.getPosicao()) && ny > getPosY(this.getPosicao())) { // Movimento para frente e para esquerda
-            for(int i = 1; i <= deltaX; i++) {
+            for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) - i, getPosY(this.getPosicao()) + i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }
             }
         }
         else if(nx < getPosX(this.getPosicao()) && ny < getPosY(this.getPosicao())) { // Movimento para trás e para esquerda
-            for(int i = 1; i <= deltaX; i++) {
+            for(int i = 1; i < deltaX; i++) {
                 if(this.getTabuleiro().getPeca(getPosX(this.getPosicao()) - i, getPosY(this.getPosicao()) - i) != null) { // Caso haja alguma peça entre o Bispo e o destino
                     return false;
                 }

@@ -30,6 +30,9 @@ public class Main {
         tabuleiro.mover("D2", "D3");
         tabuleiro.mover("C1", "F4");
         tabuleiro.mover("A3", "A1"); // Tentativa falha de roque (a torre envolvida já se moveu)
+        tabuleiro.mover("H7", "H6");
+        tabuleiro.mover("F4", "H6"); // Captura bem sucedida
+        tabuleiro.mover("H6", "C1");
         printarTabuleiro(tabuleiro);
     }
 }
